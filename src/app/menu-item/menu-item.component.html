@@ -1,0 +1,41 @@
+<!-- <div style="padding:50px; width: 100%">
+    <div>
+      <mat-card class="example-card">
+          <mat-card-title>{{menuItem ? menuItem.name : ''}}</mat-card-title>
+        <img mat-card-image src="{{menuItem ? menuItem.photoUrl : ''}}" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <mat-card-title>{{menuItem ? menuItem.description : ''}}</mat-card-title>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div> -->
+
+
+<div class="row">
+  <div class="row" style="margin-left:  20px">
+    <h3>{{menuItem ? menuItem.name : ''}}</h3>
+  </div>
+  <div class="card col-md-12 col-sm-12" style="padding: 10px">
+    <img class="card-img-top" style="max-height: 50%" src="{{menuItem ? menuItem.photoUrl : ''}}" alt="Card image">
+    <div class="card-body">
+      <p class="card-title">{{menuItem ? menuItem.description : ''}}</p>
+      <div class="row">
+        <div class="col-md-4 col-sm-12">
+          <h3>Price : {{menuItem ? menuItem.price : ''}} $</h3>
+        </div>
+        <div class="input-group col-md-4 col-sm-12">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-number"  (click)="decrement()"><i class="fas fa-minus"></i></button>
+          </span>
+          <input type="text" name="num" class="form-control input-number" [(ngModel)]="quantity"  min="1">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-number"(click)="increment()"><i class="fas fa-plus"></i></button>
+          </span>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <button class="btn btn-primary" (click) ="addToBasket(menuItem)"> Add to basket</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
