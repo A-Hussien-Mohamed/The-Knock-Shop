@@ -1,4 +1,4 @@
-<div class="row" *ngIf="BasketItems && BasketItems.length > 0">
+<div class="row" *ngIf="basketItems && basketItems.length > 0">
   <div class="row" style="margin-left:  20px">
     <h3>Basket Content</h3>
   </div>
@@ -13,10 +13,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of BasketItems"> 
+        <tr *ngFor="let item of basketItems"> 
             <th scope="row">{{item.quantity}}</th>
             <td scope="row">{{item.name}}</td>
-            <td scope="row">${{(item.price * item.quantity)}}</td>
+            <td scope="row">${{(item.price * item.quantity) | number:'1.0-1' }}</td>
             <td><button class="btn btn-danger" (click)="deleteBasketItem(item)">delete</button></td>
         <tr>
           <th scope="row">Total Price</th>
@@ -28,7 +28,7 @@
   </div>
    
 </div>
-<div class="row"  style="margin-top: 50px;" *ngIf="!BasketItems || BasketItems.length == 0">
+<div class="row"  style="margin-top: 50px;" *ngIf="!basketItems || basketItems.length == 0">
     <div class="col-md-12 emptyBasket">
         <h2>Basket Empty </h2>
     </div> 

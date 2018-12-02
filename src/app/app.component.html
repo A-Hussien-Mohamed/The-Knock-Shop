@@ -1,12 +1,9 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
     <a class="navbar-brand" [routerLink]="['/Menu']">The Knock Shop</a>
     <i class="fas fa-shopping-basket ml-auto" [routerLink]="['/Basket']" style="font-size:30px; color: aliceblue;">
-      <span class="badge badge-notify" *ngIf="BasketItemsCount > 0">{{BasketItemsCount}}</span>
+      <span class="badge badge-notify" *ngIf="basketItemsCount > 0">{{basketItemsCount}}</span>
     </i>
     
-    <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-        
-    </div>
 </nav>
 <div class="container">
   <router-outlet></router-outlet>

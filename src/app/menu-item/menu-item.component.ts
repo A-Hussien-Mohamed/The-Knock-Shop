@@ -9,7 +9,7 @@ import { IfStmt } from '@angular/compiler';
 @Component({
   selector: 'app-menu-item',
   templateUrl: './menu-item.component.html',
-  styleUrls: ['./menu-item.css']
+  styleUrls: ['./menu-item.component.sass']
 })
 export class MenuItemComponent implements OnInit {
 

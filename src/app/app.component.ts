@@ -6,22 +6,22 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app-component.css']
+  styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
 
-  BasketItemsCount;
+  basketItemsCount;
   subscription: Subscription;
 
   constructor(private _dataService: DataService) {
-    if (!this.BasketItemsCount) {
+    if (!this.basketItemsCount) {
       let basketItems = JSON.parse(sessionStorage.getItem("basketItems"));
-      this.BasketItemsCount = basketItems && basketItems.length
+      this.basketItemsCount = basketItems && basketItems.length
     }
   }
 
   ngOnInit() {
-    this.subscription = this._dataService.getBasketItems().subscribe(items => { this.BasketItemsCount = items.length; });
+    this.subscription = this._dataService.getBasketItems().subscribe(items => { this.basketItemsCount = items.length; });
   }
 
   ngOnDestroy() {

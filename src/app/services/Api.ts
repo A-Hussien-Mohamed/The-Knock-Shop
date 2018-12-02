@@ -16,9 +16,9 @@ interface MyData {
 @Injectable()
 export class ConfigService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private _httpClient: HttpClient) { }
 
   getMenuItem() {
-    return this.http.get<MyData>('https://api.myjson.com/bins/z9s2i');
+    return this._httpClient.get<MyData>('https://api.myjson.com/bins/z9s2i');
   }
 }

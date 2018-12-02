@@ -4,11 +4,10 @@ import { Observable, Subject } from 'rxjs';
 
 @Injectable()
 export class DataService {
-
-    MenuItems = [];
+    menuItems = [];
     basketItems = [];
-    private MenuItemsSubject = new Subject<any>();
-    private basketItemsSubject = new Subject<any>();
+    private _menuItemsSubject = new Subject<any>();
+    private _basketItemsSubject = new Subject<any>();
 
     constructor() { }
 
@@ -25,37 +24,34 @@ export class DataService {
             sessionStorage.removeItem("basketItems");
         }
         sessionStorage.setItem("basketItems", JSON.stringify(this.basketItems));
-        this.basketItemsSubject.next(this.basketItems);
+        this._basketItemsSubject.next(this.basketItems);
     }
     deleteFromBasket(itemId) {
         this.basketItems = this.basketItems.filter(x => x.id !== itemId);
         sessionStorage.removeItem("basketItems");
         sessionStorage.setItem("basketItems", JSON.stringify(this.basketItems));
-        this.basketItemsSubject.next(this.basketItems);
+        this._basketItemsSubject.next(this.basketItems);
     }
     deleteBasketItems() {
         this.basketItems = [];
-        return this.basketItemsSubject.next(this.basketItems);
+        return this._basketItemsSubject.next(this.basketItems);
     }
     getBasketItems() {
-        return this.basketItemsSubject.asObservable();
+        return this._basketItemsSubject.asObservable();
     }
 
     getBasketList() {
         return this.basketItems;
     }
-
     setItems(items) {
-        this.MenuItems = items;
-        this.MenuItemsSubject.next(this.MenuItems);
+        this.menuItems = items;
+        this._menuItemsSubject.next(this.menuItems);
     }
-
     getItems() {
-        return this.MenuItemsSubject.asObservable();
+        return this._menuItemsSubject.asObservable();
     }
-
     getMenuItem(itemId) {
-        return this.MenuItems.find(x => x.id == itemId);
+        return this.menuItems.find(x => x.id == itemId);
     }
 
 }
