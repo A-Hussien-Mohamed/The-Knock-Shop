@@ -1,30 +1,33 @@
 # TheKnockShop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+Menu item selection project to select the desired meals and quantity to purchase an order.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[Angular CLI] version 7.1.0.
+[npm package manager] version 6.4.1 
+[IDM ] ex: visual studio , studio code , etc...
 
-## Code scaffolding
+## Installing
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm install` for installing the packges the project need.
+Run `npm serve` for compiling the project.
 
-## Build
+## Project Architecture
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Project Architecture is divided to Main Component `App-Component` and three child Components `Menu-Component` , `Menu-item-Component` and `Basket-Component` and two services Components `Api service` and `app-data-service`.
 
-## Running unit tests
+[Api-Service] is Responsible for the Http requests through httpClient.
+[App-data-service] is Responsible for the data transition between The Components.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Communications 
 
-## Running end-to-end tests
+Projects Components are Send/Recieve Data through `App-data-service`.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Libraries Used
 
-## Further help
+ `bootstrap` version 4.1.3 is used for desigining the Application style through embedded classes.
+ `Jquery` version 3.3.1 is used for the animation of design components.
+ `font-awesome` version 5.5.0 used for the icons in the application.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-## Liberaries Used
-Bootstrap 4 & Jquery for styling 
+ 
