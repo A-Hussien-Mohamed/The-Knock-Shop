@@ -11,7 +11,7 @@ Menu item selection project to select the desired meals and quantity to purchase
 ## Installing
 
 Run `npm install` for installing the packges the project need.
-Run `npm serve` for compiling the project.
+Run `npm serve` for building the project.
 
 ## Project Architecture
 
@@ -30,4 +30,7 @@ Projects Components are Send/Recieve Data through `App-data-service`.
  `Jquery` version 3.3.1 is used for the animation of design components.
  `font-awesome` version 5.5.0 used for the icons in the application.
 
- 
+## Why Those Liberaries
+
+`bootstrap` because its Customizable , Widely used ,Open source , Flexible , Flexible , Consistent , Responsiveness
+`font-awesome` because its ranked 1st world wide , powerful icons , satisfying project needs
